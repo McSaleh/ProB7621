@@ -36,8 +36,10 @@ elif [ "$1" = 'NAND-AX' ]; then
 	cp configs/mt7621_nmbm_template_defconfig ${DEFCONFIG}
 	echo -e "CONFIG_MTDPARTS_DEFAULT=\"mtdparts=nmbm0:$2\"" >> ${DEFCONFIG}
 else
-	cp configs/mt7621_nmbm_template_defconfig ${DEFCONFIG}
-	echo -e "CONFIG_MTDPARTS_DEFAULT=\"mtdparts=nmbm0:$2\"" >> ${DEFCONFIG}
+	##cp configs/mt7621_nmbm_template_defconfig ${DEFCONFIG}
+	##echo -e "CONFIG_MTDPARTS_DEFAULT=\"mtdparts=nmbm0:$2\"" >> ${DEFCONFIG}
+ 	cp configs/mt7621_nand_template_defconfig ${DEFCONFIG}
+	echo -e "CONFIG_MTDPARTS_DEFAULT=\"mtdparts=nand0:$2\"" >> ${DEFCONFIG}
 fi
 echo "set partition table: $2"
 
